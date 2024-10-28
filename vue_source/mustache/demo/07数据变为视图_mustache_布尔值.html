@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>-->
+<script src="./mustache.js"></script>
+<script>
+  var data = {
+    isShow: true
+  }
+
+  var templateStr =  `
+    {{#isShow}}
+      <h1>你好，世界<h1>
+    {{/isShow}}
+  `
+
+  var domStr = Mustache.render(templateStr, data);
+  var container = document.getElementById('container');
+  container.innerHTML= domStr;
+  // console.log(domStr)
+</script>
+</body>
+</html>

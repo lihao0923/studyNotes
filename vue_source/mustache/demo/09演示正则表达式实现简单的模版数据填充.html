@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      var templateStr =  `<h1>我买了一个{{thing}}，花了{{money}}元，好{{mood}}啊！`;
+      var data = {
+        thing: 'MacBook Pro',
+        money: 12999,
+        mood: '开心'
+      }
+
+      function render(templateStr, data) {
+        return templateStr.replace(/\{\{(\w+)\}\}/g, function (findStr, $1) {
+          return data[$1]
+        })
+      }
+
+      var result = render(templateStr, data);
+      console.log(result);
+    </script>
+</body>
+</html>

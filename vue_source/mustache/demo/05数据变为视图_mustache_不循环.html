@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container"></div>
+<!--    <script src="https://cdn.bootcdn.net/ajax/libs/mustache.js/4.0.1/mustache.min.js"></script>-->
+<script src="./mustache.js"></script>
+<script type="application/ecmascript">
+  var data = {
+    thing: 'MacBook Pro',
+    mood: '开心'
+  }
+
+  var templateStr =  `<h1>我买了一个{{thing}}，好{{mood}}啊！！！`;
+  var domStr = Mustache.render(templateStr, data);
+  var container = document.getElementById('container');
+  container.innerHTML= domStr;
+  // console.log(domStr)
+</script>
+</body>
+</html>
